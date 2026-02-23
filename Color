@@ -386,7 +386,7 @@ local categories = {
 		["Face markings"] = {"Head Speckledstripes Primary","Head Speckledstripes Secondary","Head Speckledstripes Tertiary","Normal Spade Mask","Eye Markings Left","Eye Markings Right","Under Eye Left","Under Eye Right","Under Eye Round Left","Under Eye Round Right","Undereye Dual Splits","Normal Van Marking Right","Normal Van Marking Left","Normal Strip Nose Blaze","Normal Head Stripe","Left Section Tear","Right Section Tear","Eye Spot","Extended Whisker Pads Right","Extended Whisker Pads Left","Left Whisker Pad","Right Whisker Pad","Scattered Flecks Head","Marbled Calico Head Primary","Marbled Calico Head Secondary","Jagged Forehead Mark","Paired Eye Marking 1","Paired Eye Marking 2","Messy Spotting Head 1","Messy Spotting Head 2","Jagged Forehead Mark","Right","Left","Patched Bridge Head Secondary","Patched Bridge Head Primary","Patched Bridge Nose","Patched Bridge Nosebridge","Speckled Half Face Marking","Speckled Neck Marking","Banded Head Marking Long","Charcoal Face Stripes Left","Charcoal Face Stripes Right","Dotted Head Marking","Freckles","Left Face Stripe","Right Face Stripe","Normal Muzzle Spot","Forehead Diamond","Head Spots","Extended Nose Bridge"},
 		["Eyes"] = {"EyeDL","EyeDR","longleftpupil","longrightpupil","LeftLid","RightLid","ShortLeftLid","ShortRightLid","LongLeftLid","LongRightLid","Eye Shine Upper","Grumpy Left Lid","Grumpy Right Lid"},
 		["Ears"] = {"LEar","REar","LEar2","REar2","LEarTip","REarTip","Right Back Ear Spot","Left Back Ear Spot","Wispy Inner Ear Tuft Left","Wispy Inner Ear Tuft Right","Left Ear Speckles","Right Ear Speckles","LeftTuft","RightTuft"},
-		["Whiskers"] = {"WhiskersBrow","WhiskersMuzzleL","WhiskersMuzzleR","WhiskersArmL","WhiskersArmR"},
+		["Whiskers"] = {"WhiskersBrow","WhiskersMuzzleL","WhiskersMuzzleR","WhiskersArmL","WhiskersArmR","Long Whiskers head normal"},
 		["Head Fur"] = {"Elegant Face Fur Left","Elegant Face Fur Right","Bulky Face Fur TL","Bulky Face Fur TR","Bulky Face Fur BL","Bulky Face Fur BR","Fuzzy Head Tuft","BL Round Fuzzy Face Fur","BR Round Fuzzy Face Fur","Fluff1","Fluff2","FurFurtherLeft","FurFurtherRight","TL Round Fuzzy Face Fur","TR Round Fuzzy Face Fur","Under Ear Fur Left","Under Ear Fur Right","Chin Tuft","FurDownLeft","FurDownRight","FurUpLeft","FurUpRight","Fluffy Face Fur Left","Fluffy Face Fur Right"}
 	},
 	["Body Markings"] = {
@@ -413,7 +413,8 @@ local categories = {
 	},
 	["Accessories"] = {
 		["Cozy Jacket"] = {"Cozy Jacket Chest 1","Cozy Jacket Chest 2","Cozy Jacket Chest 3","Cozy Jacket Front Left Ankle 1","Cozy Jacket Front Left Ankle 2","Cozy Jacket Front Left Ankle Puffs","Cozy Jacket Front Left Leg 1","Cozy Jacket Front Left Leg 2","Cozy Jacket Front Left Shoulder 1","Cozy Jacket Front Left Shoulder 2","Cozy Jacket Front Right Ankle 1","Cozy Jacket Front Right Ankle 2","Cozy Jacket Front Right Ankle Puffs","Cozy Jacket Front Right Leg 1","Cozy Jacket Front Right Leg 2","Cozy Jacket Front Right Shoulder 1","Cozy Jacket Front Right Shoulder 2","Cozy Jacket Neck 1","Cozy Jacket Neck 2","Cozy Jacket Neck Puffs"},
-		["Miscellaneous"] = {"Ring","Harness","Straps","Buckles","BandanaStriped01","BandanaStriped02","BandanaStriped03","BandanaStriped04","BandanaStriped05","BandanaStriped06","BandanaStriped07","BandanaStriped08","BandanaStriped09","BandanaStriped10","Sbell","SBuckle","SCollar","SStripe1","SStripe1","SStripe2","SStripe3","SStripe4","SStripe5","SStripe6","Right Thigh Flowy Tendrills Tip Outline","Left Thigh Flowy Tendrills Tip Outline","Right Thigh Flowy Tendrills 1","Right Thigh Flowy Tendrills Tip Gem","Right Thigh Flowy Tendrills 2","Left Thigh Flowy Tendrills 1","Front Left Flowy Tendril 1","Front Left Flowy Tendril Tip Gem","Front Right Flowy Tendril 2","Front Right Flowy Tendril 1","Front Right Flowy Tendril Tip Outline","Front Left Flowy Tendril 2","Front Left Flowy Tendril Tip Outline","Front Right Flowy Tendril Tip Gem","Left Thigh Flowy Tendrills Tip Gem","Left Thigh Flowy Tendrills 2"}
+		["Miscellaneous"] = {"Ring","Harness","Straps","Buckles","BandanaStriped01","BandanaStriped02","BandanaStriped03","BandanaStriped04","BandanaStriped05","BandanaStriped06","BandanaStriped07","BandanaStriped08","BandanaStriped09","BandanaStriped10","Sbell","SBuckle","SCollar","SStripe1","SStripe1","SStripe2","SStripe3","SStripe4","SStripe5","SStripe6","Right Thigh Flowy Tendrills Tip Outline","Left Thigh Flowy Tendrills Tip Outline","Right Thigh Flowy Tendrills 1","Right Thigh Flowy Tendrills Tip Gem","Right Thigh Flowy Tendrills 2","Left Thigh Flowy Tendrills 1","Front Left Flowy Tendril 1","Front Left Flowy Tendril Tip Gem","Front Right Flowy Tendril 2","Front Right Flowy Tendril 1","Front Right Flowy Tendril Tip Outline","Front Left Flowy Tendril 2","Front Left Flowy Tendril Tip Outline","Front Right Flowy Tendril Tip Gem","Left Thigh Flowy Tendrills Tip Gem","Left Thigh Flowy Tendrills 2"},
+		["Random gps"] = {"Sleek Tail Fur Top 6","Sleek Tail Fur Top 5","Sleek Tail Fur Top 1","Sleek Tail Fur Bottom 6","Sleek Tail Fur Bottom 5","Sleek Tail Fur Bottom 1","Sleek Tail Fur 4","Sleek Tail Fur 3","Sleek Tail Fur 2","Wispy Inner Ear Tuft Right","Right Ear Heart Spots Ear normal ears","Wispy Inner Ear Tuft Left","Left Ear Heart Spots Ear normal ears","Speckled Half Face Marking","Speckled Neck Marking","Dense Head Tuft","Frizzy Head Fur Head","Frizzy Head Fur Neck","Jewelled Face Fur Head 1 BL","Jewelled Face Fur Head 1 BR","Jewelled Face Fur Head 1 TL","Jewelled Face Fur Head 1 TR","Jewelled Face Fur Head 2 BL","Jewelled Face Fur Head 2 BR","Jewelled Face Fur Head 2 TL","Jewelled Face Fur Head 2 TR","Silky Back Fur Hip","Silky Back Fur Chest","Silky Back Fur Back","Silky Back Fur Neck","Silky Back Fur Head","Soft Ear Tufts LEar","Soft Ear Tufts REar","Soft Ear Tufts LEar Tip","Soft Ear Tufts REar Tip","Bristly Body Fur Left Ankle","Bristly Body Fur Left Arm","Bristly Body Fur Right Arm","Bristly Body Fur Right Ankle","Bristly Body Fur Right Thigh","Bristly Body Fur Back Right Ankle","Bristly Body Fur Right Leg","Bristly Body Fur Left Thigh","Bristly Body Fur Left Leg","Bristly Body Fur Back Left Ankle","Ethereal Face Fur Left Bottom","Ethereal Face Fur Left Top","Ethereal Face Fur Right Bottom","Ethereal Face Fur Right Top","Bristly Body Fur Torso","Bristly Body Fur Neck","Bristly Body Fur Hip","Bristly Body Fur Front Neck","Bristly Body Fur Front Chest","Bristly Body Fur Chest","Bristly Body Fur Bottom Hip","Frizzy Chest Fur","Frizzy Neck Fur"}
 	}
 }
 
@@ -424,6 +425,196 @@ for bigCatName, subCats in pairs(categories) do
 		createSubCategory(subContainer, bigCatName, subName, items)
 	end
 end
+
+
+--== Favorite Colors Button ==
+local favoriteButton = Instance.new("TextButton")
+favoriteButton.Size = UDim2.new(0,120,0,30)
+favoriteButton.Position = UDim2.new(0,230,1,-90) -- next to Apply button
+favoriteButton.Text = "⭐ Favorite Colors"
+favoriteButton.BackgroundColor3 = Color3.fromRGB(70,100,140)
+favoriteButton.TextColor3 = Color3.new(1,1,1)
+favoriteButton.Parent = mainFrame
+
+-- Load/save
+local HttpService = game:GetService("HttpService")
+local SAVE_FILE = "FavoriteColors.json"
+local FavData = { Categories = {}, NextCategoryId = 1 }
+
+if isfile(SAVE_FILE) then
+    local success, result = pcall(function()
+        return HttpService:JSONDecode(readfile(SAVE_FILE))
+    end)
+    if success and result then
+        FavData = result
+    end
+end
+
+local function SaveFavData()
+    writefile(SAVE_FILE, HttpService:JSONEncode(FavData))
+end
+
+-- Palette window variable
+local paletteWindow
+
+favoriteButton.MouseButton1Click:Connect(function()
+    if paletteWindow then return end -- already open
+
+    paletteWindow = Instance.new("Frame")
+    paletteWindow.Size = UDim2.new(0,320,0,250)
+    paletteWindow.Position = UDim2.new(0.5,-160,0.5,-125)
+    paletteWindow.BackgroundColor3 = Color3.fromRGB(30,30,30)
+    paletteWindow.BorderSizePixel = 0
+    paletteWindow.Active = true
+    paletteWindow.Draggable = true
+    paletteWindow.Parent = screenGui -- must be your ScreenGui
+
+    -- Close
+    local closeBtn = Instance.new("TextButton", paletteWindow)
+    closeBtn.Size = UDim2.new(0,50,0,25)
+    closeBtn.Position = UDim2.new(1,-55,0,5)
+    closeBtn.Text = "✖"
+    closeBtn.BackgroundColor3 = Color3.fromRGB(150,50,50)
+    closeBtn.TextColor3 = Color3.new(1,1,1)
+    closeBtn.MouseButton1Click:Connect(function()
+        paletteWindow:Destroy()
+        paletteWindow = nil
+    end)
+
+    -- Delete toggle
+    local DeleteMode = false
+    local DeleteButton = Instance.new("TextButton", paletteWindow)
+    DeleteButton.Size = UDim2.new(0,60,0,25)
+    DeleteButton.Position = UDim2.new(0,250,0,5)
+    DeleteButton.Text = "Del: OFF"
+    DeleteButton.BackgroundColor3 = Color3.fromRGB(120,70,70)
+    DeleteButton.TextColor3 = Color3.new(1,1,1)
+    DeleteButton.MouseButton1Click:Connect(function()
+        DeleteMode = not DeleteMode
+        DeleteButton.Text = "Del: "..(DeleteMode and "ON" or "OFF")
+    end)
+
+    -- Scroll
+    local Scroll = Instance.new("ScrollingFrame", paletteWindow)
+    Scroll.Size = UDim2.new(1,-10,1,-40)
+    Scroll.Position = UDim2.new(0,5,0,35)
+    Scroll.CanvasSize = UDim2.new(0,0,0,0)
+    Scroll.ScrollBarThickness = 6
+    Scroll.BackgroundColor3 = Color3.fromRGB(40,40,40)
+
+    local Layout = Instance.new("UIListLayout", Scroll)
+    Layout.Padding = UDim.new(0,5)
+    Layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        Scroll.CanvasSize = UDim2.new(0,0,0,Layout.AbsoluteContentSize.Y + 5)
+    end)
+
+    -- Category creation
+    local function CreateCategory(id)
+        local CategoryFrame = Instance.new("Frame")
+        CategoryFrame.Size = UDim2.new(1,-10,0,80)
+        CategoryFrame.BackgroundColor3 = Color3.fromRGB(60,60,60)
+        CategoryFrame.Parent = Scroll
+
+        local Title = Instance.new("TextLabel", CategoryFrame)
+        Title.Size = UDim2.new(0.6,0,0,20)
+        Title.Text = "Category "..id
+        Title.BackgroundTransparency = 1
+        Title.TextColor3 = Color3.new(1,1,1)
+
+        local AddButton = Instance.new("TextButton", CategoryFrame)
+        AddButton.Size = UDim2.new(0,20,0,20)
+        AddButton.Position = UDim2.new(1,-25,0,0)
+        AddButton.Text = "+"
+        AddButton.BackgroundColor3 = Color3.fromRGB(80,80,150)
+        AddButton.TextColor3 = Color3.new(1,1,1)
+
+        local ColorsFrame = Instance.new("Frame", CategoryFrame)
+        ColorsFrame.Position = UDim2.new(0,5,0,25)
+        ColorsFrame.Size = UDim2.new(1,-10,0,50)
+        ColorsFrame.BackgroundTransparency = 1
+
+        local Grid = Instance.new("UIGridLayout", ColorsFrame)
+        Grid.CellSize = UDim2.new(0,20,0,20)
+        Grid.CellPadding = UDim2.new(0,3,0,3)
+
+        -- Load saved colors
+        if FavData.Categories[id] then
+            for _,rgb in ipairs(FavData.Categories[id]) do
+                local btn = Instance.new("TextButton", ColorsFrame)
+                btn.BackgroundColor3 = Color3.fromRGB(rgb[1],rgb[2],rgb[3])
+                btn.Text = ""
+                btn.MouseButton1Click:Connect(function()
+                    if DeleteMode then
+                        btn:Destroy()
+                        for i,v in ipairs(FavData.Categories[id]) do
+                            if v[1]==rgb[1] and v[2]==rgb[2] and v[3]==rgb[3] then
+                                table.remove(FavData.Categories[id],i)
+                                break
+                            end
+                        end
+                        SaveFavData()
+                    else
+                        rBox.Text = rgb[1]
+                        gBox.Text = rgb[2]
+                        bBox.Text = rgb[3]
+                        preview.BackgroundColor3 = Color3.fromRGB(rgb[1],rgb[2],rgb[3])
+                    end
+                end)
+            end
+        end
+
+        -- Add new color
+        AddButton.MouseButton1Click:Connect(function()
+            local r = clamp(rBox.Text)
+            local g = clamp(gBox.Text)
+            local b = clamp(bBox.Text)
+            FavData.Categories[id] = FavData.Categories[id] or {}
+            table.insert(FavData.Categories[id],{r,g,b})
+            SaveFavData()
+
+            local btn = Instance.new("TextButton", ColorsFrame)
+            btn.BackgroundColor3 = Color3.fromRGB(r,g,b)
+            btn.Text = ""
+            btn.MouseButton1Click:Connect(function()
+                if DeleteMode then
+                    btn:Destroy()
+                    for i,v in ipairs(FavData.Categories[id]) do
+                        if v[1]==r and v[2]==g and v[3]==b then
+                            table.remove(FavData.Categories[id],i)
+                            break
+                        end
+                    end
+                    SaveFavData()
+                else
+                    rBox.Text = r
+                    gBox.Text = g
+                    bBox.Text = b
+                    preview.BackgroundColor3 = Color3.fromRGB(r,g,b)
+                end
+            end)
+        end)
+    end
+
+    -- Load saved categories
+    for id,_ in pairs(FavData.Categories) do
+        CreateCategory(id)
+    end
+
+    -- New category button
+    local NewCategory = Instance.new("TextButton", paletteWindow)
+    NewCategory.Size = UDim2.new(0,100,0,25)
+    NewCategory.Position = UDim2.new(0,10,0,5)
+    NewCategory.Text = "New Cat"
+    NewCategory.BackgroundColor3 = Color3.fromRGB(70,100,140)
+    NewCategory.TextColor3 = Color3.new(1,1,1)
+    NewCategory.MouseButton1Click:Connect(function()
+        local id = FavData.NextCategoryId
+        FavData.Categories[id] = {}
+        FavData.NextCategoryId += 1
+        SaveFavData()
+        CreateCategory(id)
+    end)
+end)
 
 --== PALETTE BUTTON ==
 local paletteButton = Instance.new("TextButton")
@@ -1351,6 +1542,10 @@ for _, color in ipairs(paletteColors) do
 	btn.BackgroundColor3 = color
 	btn.Text = ""
 	btn.Parent = paletteScroll
+	btn.MouseButton1Click:Connect(function()
+		applyPaletteColor(color)
+	end)
+end
 	btn.MouseButton1Click:Connect(function()
 		applyPaletteColor(color)
 	end)
