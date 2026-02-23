@@ -1546,7 +1546,3 @@ for _, color in ipairs(paletteColors) do
 		applyPaletteColor(color)
 	end)
 end
-	btn.MouseButton1Click:Connect(function()
-		applyPaletteColor(color)
-	end)
-end
