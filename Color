@@ -1521,12 +1521,6 @@ local paletteColors = {
 	Color3.fromRGB(152,126,84),
 	Color3.fromRGB(180,124,123)
 
-
-
-
-	
-
-
 }
 
 local function applyPaletteColor(c)
