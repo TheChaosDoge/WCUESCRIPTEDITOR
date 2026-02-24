@@ -351,11 +351,11 @@ end)
 
 --== Deselect All ==
 local deselectButton = Instance.new("TextButton")
-deselectButton.Size = UDim2.new(0,150,0,30)
+deselectButton.Size = UDim2.new(0,130,0,30)  --
 deselectButton.Position = UDim2.new(0,0,1,-90)
 deselectButton.Text = "❌ Deselect All"
 deselectButton.Font = Enum.Font.GothamBold
-deselectButton.TextSize = 18
+deselectButton.TextSize = 16  -- 
 deselectButton.BackgroundColor3 = Color3.fromRGB(180,50,50)
 deselectButton.TextColor3 = Color3.new(1,1,1)
 deselectButton.Parent = mainFrame
@@ -367,6 +367,187 @@ deselectButton.MouseButton1Click:Connect(function()
 			checkboxMap[itemName].Text = "☐"
 		end
 	end
+end)
+
+
+
+ 
+
+
+--== RANDOMIZATOR ==
+local randomizatorButton = Instance.new("TextButton")
+randomizatorButton.Size = UDim2.new(0,110,0,30)
+randomizatorButton.Position = UDim2.new(0,120,1,-90)
+randomizatorButton.Text = "🎲 Randomizator"
+randomizatorButton.BackgroundColor3 = Color3.fromRGB(120,160,200) --
+randomizatorButton.TextColor3 = Color3.new(1,1,1)
+randomizatorButton.BorderSizePixel = 0
+
+--
+local randomizerCorner = Instance.new("UICorner")
+randomizerCorner.CornerRadius = UDim.new(0,6)
+randomizerCorner.Parent = randomizatorButton
+
+randomizatorButton.Parent = mainFrame
+
+-- 
+local function openRandomizator(parent)
+    local main = Instance.new("Frame")
+    main.Size = UDim2.new(0, 340, 0, 0) -- 
+    main.Position = UDim2.new(0.5, -170, 0.5, -130)
+    main.BackgroundColor3 = Color3.fromRGB(28,28,28)
+    main.BorderSizePixel = 0
+    main.Active = true
+    main.Draggable = true
+    main.Parent = parent
+
+    local grid = Instance.new("UIGridLayout")
+    grid.CellSize = UDim2.new(0,100,0,30)
+    grid.CellPadding = UDim2.new(0,5,0,5)
+    grid.Parent = main
+    grid.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    grid.VerticalAlignment = Enum.VerticalAlignment.Top
+    grid.FillDirectionMaxCells = 3
+
+    grid:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        main.Size = UDim2.new(0,340,0,grid.AbsoluteContentSize.Y + 10)
+    end)
+
+    local categories = {
+        {name="all", color=Color3.fromRGB(180,180,180)},
+        {name="dark", color=Color3.fromRGB(70,70,70)},
+        {name="medium", color=Color3.fromRGB(110,110,110)},
+        {name="light", color=Color3.fromRGB(200,200,200)},
+        {name="pink", color=Color3.fromRGB(220,160,180)},
+        {name="green", color=Color3.fromRGB(50,100,50)},
+        {name="red", color=Color3.fromRGB(150,50,50)},
+        {name="brown", color=Color3.fromRGB(120,80,50)},
+        {name="blue", color=Color3.fromRGB(60,100,140)},
+        {name="yellow", color=Color3.fromRGB(200,180,120)},
+        {name="purple", color=Color3.fromRGB(100,60,100)},
+        {name="orange", color=Color3.fromRGB(200,120,70)},
+    }
+
+    local function applyCategory(category, mode)
+        local editorRig = workspace:FindFirstChild("EditorRig")
+        if not editorRig then
+            warn("EditorRig not found!")
+            return
+        end
+
+        local ranges = {
+            red     = {0.00, 0.04},
+            orange  = {0.04, 0.08},
+            yellow  = {0.08, 0.15},
+            green   = {0.25, 0.38},
+            blue    = {0.55, 0.68},
+            purple  = {0.70, 0.82},
+            pink    = {0.83, 0.95},
+            brown   = {0.05, 0.09},
+            all     = {0,1}
+        }
+
+        local hueMin, hueMax = 0,1
+        if ranges[category] then
+            hueMin = ranges[category][1]
+            hueMax = ranges[category][2]
+        end
+
+        for _, part in ipairs(editorRig:GetDescendants()) do
+            if part:IsA("BasePart") or part:IsA("MeshPart") then
+                local hue = math.random() * (hueMax - hueMin) + hueMin
+                local sat
+                local val
+
+                if mode == "dark" then
+                    sat = math.random(40,70)/100
+                    val = math.random(20,35)/100
+                elseif mode == "medium" then
+                    sat = math.random(50,75)/100
+                    val = math.random(35,50)/100
+                elseif mode == "light" then
+                    sat = math.random(20,35)/100
+                    val = math.random(75,90)/100
+                else
+                    sat = math.random(45,70)/100
+                    val = math.random(30,50)/100
+                end
+
+                if category == "green" then
+                    sat = math.random(15,30)/100
+                    val = math.random(15,30)/100
+                elseif category == "blue" then
+                    sat = math.random(30,45)/100
+                    val = math.random(20,35)/100
+                elseif category == "purple" then
+                    sat = math.random(20,35)/100
+                    val = math.random(20,35)/100
+                elseif category == "pink" then
+                    sat = math.random(20,35)/100
+                    val = math.random(25,40)/100
+                end
+
+                part.Color = Color3.fromHSV(hue, sat, val)
+            end
+        end
+    end
+
+    for _,cat in ipairs(categories) do
+        local btn = Instance.new("TextButton")
+        btn.Text = cat.name
+        btn.TextColor3 = Color3.new(1,1,1)
+        btn.BackgroundColor3 = cat.color
+        btn.BorderSizePixel = 0
+        btn.Parent = main
+
+        local uicorner = Instance.new("UICorner")
+        uicorner.CornerRadius = UDim.new(0,6)
+        uicorner.Parent = btn
+
+        btn.MouseButton1Click:Connect(function()
+            if cat.name == "dark" or cat.name == "medium" or cat.name == "light" then
+                applyCategory("all", cat.name)
+            else
+                applyCategory(cat.name)
+            end
+        end)
+    end
+
+    -- 
+    local close = Instance.new("TextButton")
+    close.Size = UDim2.new(0,12,0,12)
+    close.Text = "X"
+    close.BackgroundColor3 = Color3.fromRGB(100,40,40)
+    close.TextColor3 = Color3.new(1,1,1)
+    close.BorderSizePixel = 0
+    close.Parent = parent
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0,4)
+    corner.Parent = close
+
+    local RunService = game:GetService("RunService")
+    local conn
+    conn = RunService.RenderStepped:Connect(function()
+        if main and main.Parent then
+            local absPos = main.AbsolutePosition
+            local absSize = main.AbsoluteSize
+            close.Position = UDim2.new(0, absPos.X + absSize.X - close.Size.X.Offset,
+                                       0, absPos.Y)
+        else
+            if conn then conn:Disconnect() end
+        end
+    end)
+
+    close.MouseButton1Click:Connect(function()
+        main:Destroy()
+        close:Destroy()
+    end)
+end
+
+--
+randomizatorButton.MouseButton1Click:Connect(function()
+    openRandomizator(mainFrame)
 end)
 
 --== Item table ==
@@ -1520,6 +1701,9 @@ local paletteColors = {
 	Color3.fromRGB(144,124,81),
 	Color3.fromRGB(152,126,84),
 	Color3.fromRGB(180,124,123)
+
+	
+
 
 }
 
